@@ -343,13 +343,13 @@ def validate_counterfactual_analysis(model, X_train, X_test, y_train, feature_na
 
 def compare_with_paper_results(shap_results):
     """
-    논문에서 언급된 주요 SHAP 특성들과 비교합니다.
+     주요 SHAP 특성들과 비교합니다.
     """
     if shap_results is None:
         logging.error("SHAP 결과가 없어 논문 비교를 수행할 수 없습니다.")
         return
     
-    # 논문에서 언급된 상위 특성들
+    #  상위 특성들
     paper_top_features = [
         'Process.1', 'Process.2', 'Process.3', 'Process.4', 'Process.5'
     ]
@@ -365,7 +365,7 @@ def compare_with_paper_results(shap_results):
     logging.info("논문 결과와 SHAP 분석 비교:")
     
     if not found_features:
-        logging.info("  논문에서 언급된 중요 특성이 현재 분석의 상위 특성에 포함되지 않았습니다.")
+        logging.info("   중요 특성이 현재 분석의 상위 특성에 포함되지 않았습니다.")
     else:
         for feature, rank in found_features:
             logging.info(f"  {feature}: 현재 분석 순위 #{rank}")
