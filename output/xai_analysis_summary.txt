@@ -1,0 +1,34 @@
+XAI 분석 결과 요약
+===================
+
+특성 중요도 (SHAP):
+- Sensor_Factory_Humidity: 0.021225
+- Process_Spray_Time: 0.020553
+- Process_Clamping_Force: 0.020018
+- Process_Cycle_Time: 0.019590
+- Process_High_Velocity: 0.019328
+- Process_Shot: 0.017998
+- Sensor_Melting_Furnace_Temp: 0.017668
+- Process_Spray_1_Time: 0.016822
+- Sensor_Coolant_Pressure: 0.014601
+- Sensor_Coolant_Temp: 0.013812
+- Process_Casting_Pressure: 0.012935
+- Sensor_Air_Pressure: 0.012857
+- Sensor_Factory_Temp: 0.012579
+- Process_Spray_2_Time: 0.010963
+- Process_Velocity_3: 0.009752
+- Process_Biscuit_Thickness: 0.009691
+- Process_Velocity_2: 0.009119
+- Process_ Pressure_Rise_Time: 0.008647
+- Process_Velocity_1: 0.008536
+- Process_Cylinder_Pressure: 0.007602
+- Process_Rapid_Rise_Time: 0.005482
+- Process_Product_Type_2: 0.002884
+- Sensor_Coolant_Temp_Max: 0.000000
+- Sensor_Coolant_Temp_Min: 0.000000
+- Sensor_Factory_Temp_Min: 0.000000
+- Sensor_Factory_Temp_Max: 0.000000
+- Sensor_Air_Pressure_Min: 0.000000
+- Sensor_Factory_Humidity_Min: 0.000000
+- Sensor_Factory_Humidity_Max: 0.000000
+- Sensor_Air_Pressure_Max: 0.000000

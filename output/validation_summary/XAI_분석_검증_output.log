@@ -1,0 +1,10 @@
+실행 결과: 실패
+
+표준 출력:
+
+
+표준 오류:
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_xai_analysis.py", line 9, in <module>
+    from dice_ml import DiCE
+ImportError: cannot import name 'DiCE' from 'dice_ml' (/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/dice_ml/__init__.py)

@@ -1,0 +1,145 @@
+{
+  "classes": [
+    {
+      "name": "ManufacturingProcess",
+      "parent": "owl:Thing",
+      "properties": {
+        "comment": "Represents the overall manufacturing process."
+      }
+    },
+    {
+      "name": "DieCastingProcess",
+      "parent": "ManufacturingProcess",
+      "properties": {
+        "comment": "Represents the specific die-casting process."
+      }
+    },
+    {
+      "name": "Parameter",
+      "parent": "owl:Thing",
+      "properties": {
+        "comment": "Represents a parameter in the manufacturing process."
+      }
+    },
+    {
+      "name": "ProcessParameter",
+      "parent": "Parameter",
+      "properties": {
+        "comment": "Represents parameters directly controlled in the process."
+      }
+    },
+    {
+      "name": "SensorParameter",
+      "parent": "Parameter",
+      "properties": {
+        "comment": "Represents parameters measured by sensors."
+      }
+    },
+    {
+      "name": "Velocity",
+      "parent": "ProcessParameter",
+      "properties": {}
+    },
+    {
+      "name": "Pressure",
+      "parent": "ProcessParameter",
+      "properties": {}
+    },
+    {
+      "name": "Temperature",
+      "parent": "ProcessParameter",
+      "properties": {}
+    },
+    {
+      "name": "Time",
+      "parent": "ProcessParameter",
+      "properties": {}
+    },
+    {
+      "name": "Quality",
+      "parent": "owl:Thing",
+      "properties": {
+        "comment": "Represents the quality status of a product."
+      }
+    },
+    {
+      "name": "GoodQuality",
+      "parent": "Quality",
+      "properties": {}
+    },
+    {
+      "name": "Defect",
+      "parent": "Quality",
+      "properties": {
+        "comment": "Represents a defect in the product."
+      }
+    },
+    {
+      "name": "DefectType",
+      "parent": "Defect",
+      "properties": {
+        "comment": "Represents a specific type of defect."
+      }
+    },
+    {
+      "name": "ShortShot",
+      "parent": "DefectType",
+      "properties": {}
+    },
+    {
+      "name": "Bubble",
+      "parent": "DefectType",
+      "properties": {}
+    },
+    {
+      "name": "BlowHole",
+      "parent": "DefectType",
+      "properties": {}
+    },
+    {
+      "name": "Exfoliation",
+      "parent": "DefectType",
+      "properties": {}
+    },
+    {
+      "name": "DefectGeneral",
+      "parent": "DefectType",
+      "properties": {}
+    }
+  ],
+  "properties": [
+    {
+      "name": "hasParameter",
+      "domain": "ManufacturingProcess",
+      "range": "Parameter",
+      "type": "object"
+    },
+    {
+      "name": "causesDefect",
+      "domain": "Parameter",
+      "range": "DefectType",
+      "type": "object"
+    },
+    {
+      "name": "preventsDefect",
+      "domain": "Parameter",
+      "range": "DefectType",
+      "type": "object"
+    },
+    {
+      "name": "hasValue",
+      "domain": "Parameter",
+      "range": "xsd:float",
+      "type": "data"
+    },
+    {
+      "name": "hasImportance",
+      "domain": "Parameter",
+      "range": "xsd:float",
+      "type": "data",
+      "properties": {
+         "comment": "Represents the importance score (e.g., SHAP value) of a parameter regarding a defect."
+      }
+    }
+  ]
+} 

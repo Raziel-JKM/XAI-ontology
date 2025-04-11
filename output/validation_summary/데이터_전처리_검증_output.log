@@ -1,0 +1,30 @@
+실행 결과: 실패
+
+표준 출력:
+
+
+표준 오류:
+2025-04-04 21:12:30,352 - INFO - 원본 데이터 크기: (7536, 57)
+2025-04-04 21:12:30,352 - INFO - 컬럼 수: 57
+2025-04-04 21:12:30,355 - INFO - 수치형 컬럼 수: 0
+2025-04-04 21:12:30,355 - INFO - 범주형 컬럼 수: 57
+2025-04-04 21:12:30,377 - INFO - 전체 결측치 수: 540
+2025-04-04 21:12:30,379 - INFO - 이상치 제거 후 데이터 크기: (7536, 57)
+2025-04-04 21:12:30,381 - INFO - 불량 비율: 0.01%
+/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/base.py:474: FutureWarning: `BaseEstimator._validate_data` is deprecated in 1.6 and will be removed in 1.7. Use `sklearn.utils.validation.validate_data` instead. This function becomes public and is part of the scikit-learn developer API.
+  warnings.warn(
+2025-04-04 21:12:30,389 - ERROR - SMOTE 적용 중 오류 발생: at least one array or dtype is required
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_data_preprocessing.py", line 162, in <module>
+    results = validate_dataset_preprocessing()
+  File "/Users/raziel/Desktop/XAI/validate_data_preprocessing.py", line 110, in validate_dataset_preprocessing
+    X_train, X_test, y_train, y_test = train_test_split(
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2872, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 1909, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2318, in _iter_indices
+    raise ValueError(
+ValueError: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.

@@ -1,0 +1,31 @@
+실행 결과: 실패
+
+표준 출력:
+
+
+표준 오류:
+2025-04-04 21:12:31,730 - INFO - 원본 데이터 크기: (7536, 57)
+2025-04-04 21:12:31,732 - INFO - 이상치 제거 후 데이터 크기: (7536, 57)
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_model_performance.py", line 289, in <module>
+    results, comparison, best_model = train_and_evaluate_models()
+  File "/Users/raziel/Desktop/XAI/validate_model_performance.py", line 114, in train_and_evaluate_models
+    X_train, X_test, y_train, y_test, feature_names = preprocess_data()
+  File "/Users/raziel/Desktop/XAI/validate_model_performance.py", line 79, in preprocess_data
+    X_scaled = scaler.fit_transform(X_numeric)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/base.py", line 918, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 894, in fit
+    return self.partial_fit(X, y, sample_weight)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 930, in partial_fit
+    X = validate_data(
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/validation.py", line 931, in check_array
+    dtype_orig = np.result_type(*dtypes_orig)
+  File "<__array_function__ internals>", line 180, in result_type
+ValueError: at least one array or dtype is required

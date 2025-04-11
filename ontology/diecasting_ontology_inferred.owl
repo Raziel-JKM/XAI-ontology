@@ -1,0 +1,545 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/diecasting.owl"
+         xmlns="http://example.org/diecasting.owl#">
+
+<owl:Ontology rdf:about="http://example.org/diecasting.owl"/>
+
+<owl:ObjectProperty rdf:about="#hasParameter">
+  <rdfs:domain rdf:resource="#DieCastingProcess"/>
+  <rdfs:range rdf:resource="#Parameter"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#causesDefect">
+  <rdfs:domain rdf:resource="#Parameter"/>
+  <rdfs:range rdf:resource="#DefectType"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#precedes">
+  <rdfs:domain rdf:resource="#ProcessParameter"/>
+  <rdfs:range rdf:resource="#ProcessParameter"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#correlatesWith">
+  <rdfs:domain rdf:resource="#Parameter"/>
+  <rdfs:range rdf:resource="#Parameter"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#influences">
+  <rdfs:domain rdf:resource="#Parameter"/>
+  <rdfs:range rdf:resource="#Parameter"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#preventsDefect">
+  <rdfs:domain rdf:resource="#Parameter"/>
+  <rdfs:range rdf:resource="#DefectType"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#detectsDefect">
+  <rdfs:domain rdf:resource="#SensorParameter"/>
+  <rdfs:range rdf:resource="#DefectType"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasValue">
+  <rdfs:domain rdf:resource="#Parameter"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasOptimalRange">
+  <rdfs:domain rdf:resource="#Parameter"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasUnit">
+  <rdfs:domain rdf:resource="#Parameter"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasImportance">
+  <rdfs:domain rdf:resource="#Parameter"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#DieCastingProcess">
+  <rdfs:subClassOf rdf:resource="#ManufacturingProcess"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Parameter">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DefectType">
+  <rdfs:subClassOf rdf:resource="#Quality"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProcessParameter">
+  <rdfs:subClassOf rdf:resource="#Parameter"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SensorParameter">
+  <rdfs:subClassOf rdf:resource="#Parameter"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ManufacturingProcess">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Quality">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MachineParameter">
+  <rdfs:subClassOf rdf:resource="#Parameter"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MaterialParameter">
+  <rdfs:subClassOf rdf:resource="#Parameter"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EnvironmentalParameter">
+  <rdfs:subClassOf rdf:resource="#Parameter"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ShortShot">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">금형에 충분한 용탕이 채워지지 않아 발생하는 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Bubble">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">용탕 내부의 기포가 굳으면서 형성되는 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Exfoliation">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">도금층이나 코팅이 벗겨지는 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#BlowHole">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">주물 표면에 발생하는 구멍 형태의 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Stain">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">표면에 얼룩이 생기는 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Dent">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">표면에 함몰된 부분이 생기는 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Deformation">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">제품 형상이 설계와 다르게 변형되는 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Contamination">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">불순물 혼입으로 인한 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Crack">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">제품에 균열이 발생하는 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Scratch">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">표면에 긁힘이 생기는 결함</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Velocity">
+  <rdfs:subClassOf rdf:resource="#ProcessParameter"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">사출 속도 관련 매개변수</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Pressure">
+  <rdfs:subClassOf rdf:resource="#ProcessParameter"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">사출 압력 관련 매개변수</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Temperature">
+  <rdfs:subClassOf rdf:resource="#EnvironmentalParameter"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">온도 관련 매개변수</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Humidity">
+  <rdfs:subClassOf rdf:resource="#EnvironmentalParameter"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">습도 관련 매개변수</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Time">
+  <rdfs:subClassOf rdf:resource="#ProcessParameter"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">시간 관련 매개변수</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Force">
+  <rdfs:subClassOf rdf:resource="#MachineParameter"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">힘 관련 매개변수</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#GoodQuality">
+  <rdfs:subClassOf rdf:resource="#Quality"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Defect">
+  <rdfs:subClassOf rdf:resource="#Quality"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a defect in the product.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#DefectGeneral">
+  <rdfs:subClassOf rdf:resource="#DefectType"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#DieCastingProcess_001">
+  <rdf:type rdf:resource="#DieCastingProcess"/>
+  <hasParameter rdf:resource="#Pressure_Rise_Time"/>
+  <hasParameter rdf:resource="#Cylinder_Pressure"/>
+  <hasParameter rdf:resource="#Cycle_Time"/>
+  <hasParameter rdf:resource="#High_Velocity"/>
+  <hasParameter rdf:resource="#Casting_Pressure"/>
+  <hasParameter rdf:resource="#Factory_Temp"/>
+  <hasParameter rdf:resource="#Velocity_2"/>
+  <hasParameter rdf:resource="#Coolant_Temp"/>
+  <hasParameter rdf:resource="#Spray_Time"/>
+  <hasParameter rdf:resource="#Velocity_1"/>
+  <hasParameter rdf:resource="#Velocity_3"/>
+  <hasParameter rdf:resource="#Melting_Furnace_Temp"/>
+  <hasParameter rdf:resource="#Rapid_Rise_Time"/>
+  <hasParameter rdf:resource="#Sensor_Factory_Humidity"/>
+  <hasParameter rdf:resource="#Process_Spray_Time"/>
+  <hasParameter rdf:resource="#Process_Clamping_Force"/>
+  <hasParameter rdf:resource="#Process_Cycle_Time"/>
+  <hasParameter rdf:resource="#Process_High_Velocity"/>
+  <hasParameter rdf:resource="#Process_Shot"/>
+  <hasParameter rdf:resource="#Sensor_Melting_Furnace_Temp"/>
+  <hasParameter rdf:resource="#Process_Spray_1_Time"/>
+  <hasParameter rdf:resource="#Sensor_Coolant_Pressure"/>
+  <hasParameter rdf:resource="#Sensor_Coolant_Temp"/>
+  <hasParameter rdf:resource="#Process_Casting_Pressure"/>
+  <hasParameter rdf:resource="#Sensor_Air_Pressure"/>
+  <hasParameter rdf:resource="#Sensor_Factory_Temp"/>
+  <hasParameter rdf:resource="#Process_Spray_2_Time"/>
+  <hasParameter rdf:resource="#Process_Velocity_3"/>
+  <hasParameter rdf:resource="#Process_Biscuit_Thickness"/>
+  <hasParameter rdf:resource="#Process_Velocity_2"/>
+  <hasParameter rdf:resource="#Process_ Pressure_Rise_Time"/>
+  <hasParameter rdf:resource="#Process_Velocity_1"/>
+  <hasParameter rdf:resource="#Process_Cylinder_Pressure"/>
+  <hasParameter rdf:resource="#Process_Rapid_Rise_Time"/>
+  <hasParameter rdf:resource="#Process_Product_Type_2"/>
+  <hasParameter rdf:resource="#Sensor_Coolant_Temp_Max"/>
+  <hasParameter rdf:resource="#Sensor_Coolant_Temp_Min"/>
+  <hasParameter rdf:resource="#Sensor_Factory_Temp_Min"/>
+  <hasParameter rdf:resource="#Sensor_Factory_Temp_Max"/>
+  <hasParameter rdf:resource="#Sensor_Air_Pressure_Min"/>
+  <hasParameter rdf:resource="#Sensor_Factory_Humidity_Min"/>
+  <hasParameter rdf:resource="#Sensor_Factory_Humidity_Max"/>
+  <hasParameter rdf:resource="#Sensor_Air_Pressure_Max"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pressure_Rise_Time">
+  <rdf:type rdf:resource="#Time"/>
+  <causesDefect rdf:resource="#BlowHoleDefect"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cylinder_Pressure">
+  <rdf:type rdf:resource="#Pressure"/>
+  <correlatesWith rdf:resource="#Casting_Pressure"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cycle_Time">
+  <rdf:type rdf:resource="#Time"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#High_Velocity">
+  <rdf:type rdf:resource="#Velocity"/>
+  <preventsDefect rdf:resource="#ShortShotDefect"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Casting_Pressure">
+  <rdf:type rdf:resource="#Pressure"/>
+  <preventsDefect rdf:resource="#BubbleDefect"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Factory_Temp">
+  <rdf:type rdf:resource="#Temperature"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Velocity_2">
+  <rdf:type rdf:resource="#Velocity"/>
+  <precedes rdf:resource="#Velocity_3"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Coolant_Temp">
+  <rdf:type rdf:resource="#Temperature"/>
+  <influences rdf:resource="#Cycle_Time"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Spray_Time">
+  <rdf:type rdf:resource="#Time"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Velocity_1">
+  <rdf:type rdf:resource="#Velocity"/>
+  <precedes rdf:resource="#Velocity_2"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.14</hasValue>
+  <hasOptimalRange rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.13</hasOptimalRange>
+  <hasOptimalRange rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.15</hasOptimalRange>
+  <hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">m/s</hasUnit>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Velocity_3">
+  <rdf:type rdf:resource="#Velocity"/>
+  <precedes rdf:resource="#High_Velocity"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Melting_Furnace_Temp">
+  <rdf:type rdf:resource="#Temperature"/>
+  <influences rdf:resource="#Velocity_2"/>
+  <influences rdf:resource="#Velocity_1"/>
+  <influences rdf:resource="#Velocity_3"/>
+  <causesDefect rdf:resource="#BubbleDefect"/>
+  <causesDefect rdf:resource="#BlowHoleDefect"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">695.0</hasValue>
+  <hasOptimalRange rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">690.0</hasOptimalRange>
+  <hasOptimalRange rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">700.0</hasOptimalRange>
+  <hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">°C</hasUnit>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</hasImportance>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BlowHoleDefect">
+  <rdf:type rdf:resource="#BlowHole"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ShortShotDefect">
+  <rdf:type rdf:resource="#ShortShot"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BubbleDefect">
+  <rdf:type rdf:resource="#Bubble"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rapid_Rise_Time">
+  <rdf:type rdf:resource="#Time"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Factory_Humidity">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.02122474689138677</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-2.584928743254673e-05</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Spray_Time">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.02055329911492538</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.02510717690386807</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Clamping_Force">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.020017747156298</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0064664967470719256</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Cycle_Time">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.019590478563126356</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.008852469312686857</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_High_Velocity">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0193284040405881</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.011733997553181889</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Shot">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.017997792455050843</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.022465941574490948</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Melting_Furnace_Temp">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.017668300023047565</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.00441635147208207</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Spray_1_Time">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.016822184715872872</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.016588178332498024</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Coolant_Pressure">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.014600679931260943</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.052487607045448414</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Coolant_Temp">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.013811971070244572</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.011199709247584401</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Casting_Pressure">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.012934873732432513</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.003748992062756843</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Air_Pressure">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.01285726325126735</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.01937538470509604</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Factory_Temp">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.01257884158201529</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.014288688088162499</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Spray_2_Time">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.010962711486765137</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0005160970517086625</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Velocity_3">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.00975172601181722</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0111471058365079</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Biscuit_Thickness">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.009690711873289598</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.003307065161329801</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Velocity_2">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.009119369138793802</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.026771530706367275</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_ Pressure_Rise_Time">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.00864741320265908</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-0.008861513628912868</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Velocity_1">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.008535564786196138</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0017166941912840237</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Cylinder_Pressure">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.007602401735501165</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.018947592635271626</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Rapid_Rise_Time">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.005481692796371177</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.02067897260688487</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Process_Product_Type_2">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <causesDefect rdf:resource="#ShortShotDefect"/>
+  <hasImportance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0028837011321122402</hasImportance>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.003463574640461583</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Coolant_Temp_Max">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Coolant_Temp_Min">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Factory_Temp_Min">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Factory_Temp_Max">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Air_Pressure_Min">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Factory_Humidity_Min">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Factory_Humidity_Max">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sensor_Air_Pressure_Max">
+  <rdf:type rdf:resource="#ProcessParameter"/>
+  <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasValue>
+</owl:NamedIndividual>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#ShortShot"/>
+    <rdf:Description rdf:about="#Bubble"/>
+    <rdf:Description rdf:about="#Exfoliation"/>
+    <rdf:Description rdf:about="#BlowHole"/>
+    <rdf:Description rdf:about="#Stain"/>
+    <rdf:Description rdf:about="#Dent"/>
+    <rdf:Description rdf:about="#Deformation"/>
+    <rdf:Description rdf:about="#Contamination"/>
+    <rdf:Description rdf:about="#Crack"/>
+    <rdf:Description rdf:about="#Scratch"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

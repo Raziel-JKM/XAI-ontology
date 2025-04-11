@@ -1,0 +1,14 @@
+{
+  "data_validation": {
+    "status": "failed"
+  },
+  "model_validation": {
+    "status": "failed"
+  },
+  "xai_validation": {
+    "status": "failed"
+  },
+  "ontology_validation": {
+    "status": "failed"
+  }
+}

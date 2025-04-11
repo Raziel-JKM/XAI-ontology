@@ -1,0 +1,35 @@
+온톨로지 구조 시각화
+===================
+
+클래스 계층 구조:
+
+주요 관계:
+- Velocity_2 --causesDefect--> ShortShotDefect
+- Velocity_1 --causesDefect--> ShortShotDefect
+- Sensor_Factory_Humidity --causesDefect--> ShortShotDefect
+- Process_Spray_Time --causesDefect--> ShortShotDefect
+- Process_Clamping_Force --causesDefect--> ShortShotDefect
+- Process_Cycle_Time --causesDefect--> ShortShotDefect
+- Process_High_Velocity --causesDefect--> ShortShotDefect
+- Process_Shot --causesDefect--> ShortShotDefect
+- Sensor_Melting_Furnace_Temp --causesDefect--> ShortShotDefect
+- Process_Spray_1_Time --causesDefect--> ShortShotDefect
+- Sensor_Coolant_Pressure --causesDefect--> ShortShotDefect
+- Sensor_Coolant_Temp --causesDefect--> ShortShotDefect
+- Process_Casting_Pressure --causesDefect--> ShortShotDefect
+- Sensor_Air_Pressure --causesDefect--> ShortShotDefect
+- Sensor_Factory_Temp --causesDefect--> ShortShotDefect
+- Process_Spray_2_Time --causesDefect--> ShortShotDefect
+- Process_Velocity_3 --causesDefect--> ShortShotDefect
+- Process_Biscuit_Thickness --causesDefect--> ShortShotDefect
+- Process_Velocity_2 --causesDefect--> ShortShotDefect
+- Process_ Pressure_Rise_Time --causesDefect--> ShortShotDefect
+- Process_Velocity_1 --causesDefect--> ShortShotDefect
+- Process_Cylinder_Pressure --causesDefect--> ShortShotDefect
+- Process_Rapid_Rise_Time --causesDefect--> ShortShotDefect
+- Process_Product_Type_2 --causesDefect--> ShortShotDefect
+- Melting_Furnace_Temp --causesDefect--> BubbleDefect
+- Pressure_Rise_Time --causesDefect--> BlowHoleDefect
+- Melting_Furnace_Temp --causesDefect--> BlowHoleDefect
+- High_Velocity --preventsDefect--> ShortShotDefect
+- Casting_Pressure --preventsDefect--> BubbleDefect

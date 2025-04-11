@@ -1,0 +1,194 @@
+2025-04-04 21:05:19,956 - INFO - 데이터 전처리 검증 실행 시작...
+2025-04-04 21:05:22,319 - ERROR - 데이터 전처리 검증 실행 중 오류 발생:
+2025-04-04 21:05:22,319 - ERROR - 오류 메시지: 2025-04-04 21:05:22,202 - INFO - 원본 데이터 크기: (7536, 57)
+2025-04-04 21:05:22,202 - INFO - 컬럼 수: 57
+2025-04-04 21:05:22,204 - INFO - 수치형 컬럼 수: 0
+2025-04-04 21:05:22,204 - INFO - 범주형 컬럼 수: 57
+2025-04-04 21:05:22,227 - INFO - 전체 결측치 수: 540
+2025-04-04 21:05:22,228 - INFO - 이상치 제거 후 데이터 크기: (7536, 57)
+2025-04-04 21:05:22,231 - INFO - 불량 비율: 0.01%
+/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/base.py:474: FutureWarning: `BaseEstimator._validate_data` is deprecated in 1.6 and will be removed in 1.7. Use `sklearn.utils.validation.validate_data` instead. This function becomes public and is part of the scikit-learn developer API.
+  warnings.warn(
+2025-04-04 21:05:22,239 - ERROR - SMOTE 적용 중 오류 발생: at least one array or dtype is required
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_data_preprocessing.py", line 162, in <module>
+    results = validate_dataset_preprocessing()
+  File "/Users/raziel/Desktop/XAI/validate_data_preprocessing.py", line 110, in validate_dataset_preprocessing
+    X_train, X_test, y_train, y_test = train_test_split(
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2872, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 1909, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2318, in _iter_indices
+    raise ValueError(
+ValueError: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+
+2025-04-04 21:05:22,320 - INFO - 모델 성능 검증 실행 시작...
+2025-04-04 21:05:23,686 - ERROR - 모델 성능 검증 실행 중 오류 발생:
+2025-04-04 21:05:23,686 - ERROR - 오류 메시지: 2025-04-04 21:05:23,585 - INFO - 원본 데이터 크기: (7536, 57)
+2025-04-04 21:05:23,586 - INFO - 이상치 제거 후 데이터 크기: (7536, 57)
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_model_performance.py", line 289, in <module>
+    results, comparison, best_model = train_and_evaluate_models()
+  File "/Users/raziel/Desktop/XAI/validate_model_performance.py", line 114, in train_and_evaluate_models
+    X_train, X_test, y_train, y_test, feature_names = preprocess_data()
+  File "/Users/raziel/Desktop/XAI/validate_model_performance.py", line 79, in preprocess_data
+    X_scaled = scaler.fit_transform(X_numeric)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/base.py", line 918, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 894, in fit
+    return self.partial_fit(X, y, sample_weight)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 930, in partial_fit
+    X = validate_data(
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/validation.py", line 931, in check_array
+    dtype_orig = np.result_type(*dtypes_orig)
+  File "<__array_function__ internals>", line 180, in result_type
+ValueError: at least one array or dtype is required
+
+2025-04-04 21:05:23,686 - INFO - XAI 분석 검증 실행 시작...
+2025-04-04 21:05:25,427 - ERROR - XAI 분석 검증 실행 중 오류 발생:
+2025-04-04 21:05:25,427 - ERROR - 오류 메시지: Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_xai_analysis.py", line 9, in <module>
+    from dice_ml import DiCE
+ImportError: cannot import name 'DiCE' from 'dice_ml' (/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/dice_ml/__init__.py)
+
+2025-04-04 21:05:25,427 - INFO - 온톨로지 추론 검증 실행 시작...
+2025-04-04 21:05:25,983 - ERROR - 온톨로지 추론 검증 실행 중 오류 발생:
+2025-04-04 21:05:25,983 - ERROR - 오류 메시지: 2025-04-04 21:05:25,916 - INFO - 온톨로지 로드 시작: /Users/raziel/Desktop/XAI/ontology/diecasting_ontology.owl
+2025-04-04 21:05:25,917 - INFO - 기존 온톨로지 파일 백업 완료: /Users/raziel/Desktop/XAI/ontology/backup_diecasting_ontology.owl
+2025-04-04 21:05:25,919 - INFO - 온톨로지 로드 완료: 클래스 29개, 인스턴스 17개, 프로퍼티 11개
+2025-04-04 21:05:25,919 - INFO - 온톨로지 구조 검증 시작
+2025-04-04 21:05:25,920 - WARNING - 누락된 필수 클래스: Process, Product, Material
+2025-04-04 21:05:25,920 - WARNING - 누락된 필수 프로퍼티: hasProcessParameter, hasCause, hasDefect
+2025-04-04 21:05:25,920 - ERROR - 온톨로지 구조 검증 중 오류 발생: 'method' object is not iterable
+2025-04-04 21:05:25,920 - INFO - SWRL 규칙 검증 시작
+2025-04-04 21:05:25,920 - ERROR - SWRL 규칙 검증 중 오류 발생: 'method' object is not iterable
+2025-04-04 21:05:25,920 - INFO - 온톨로지 추론 시작
+* Owlready2 * Running Pellet...
+    java -Xmx2000M -cp /opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/httpclient-4.2.3.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/aterm-java-1.6.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/xercesImpl-2.10.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/slf4j-api-1.6.4.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-tdb-0.10.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-iri-0.9.5.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/owlapi-distribution-3.4.3-bin.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jcl-over-slf4j-1.6.4.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/slf4j-log4j12-1.6.4.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/antlr-runtime-3.2.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/log4j-core-2.19.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/pellet-2.3.1.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jgrapht-jdk1.5.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/commons-codec-1.6.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/antlr-3.2.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/xml-apis-1.4.01.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/log4j-1.2-api-2.19.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/httpcore-4.2.2.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-arq-2.10.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/log4j-api-2.19.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-core-2.10.0.jar pellet.Pellet realize --loader Jena --input-format N-Triples --infer-prop-values --infer-data-prop-values --ignore-imports /var/folders/gp/z63786vj1bl9byrtnmsjsh800000gn/T/tmp73r_fvb9
+2025-04-04 21:05:25,933 - ERROR - Pellet 추론기 실행 실패: Java error message is:
+The operation couldn’t be completed. Unable to locate a Java Runtime.
+Please visit http://www.java.com for information on installing Java.
+
+
+2025-04-04 21:05:25,933 - ERROR - HermiT 추론기 실행 실패: sync_reasoner_hermit() got an unexpected keyword argument 'infer_data_property_values'
+2025-04-04 21:05:25,933 - INFO - 온톨로지 추론 결과와 XAI 분석 결과 비교 시작
+2025-04-04 21:05:25,933 - WARNING - XAI 결과 파일이 없습니다. 샘플 결과를 생성합니다.
+2025-04-04 21:05:25,933 - ERROR - 온톨로지 추론 결과 파일이 없습니다.
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_ontology_inference.py", line 467, in <module>
+    comparison_success, agreement_ratio = compare_with_xai_results(onto, xai_results_path)
+TypeError: cannot unpack non-iterable bool object
+
+2025-04-04 21:05:25,983 - WARNING - 데이터 검증 결과를 찾을 수 없습니다.
+2025-04-04 21:05:25,983 - WARNING - 모델 검증 결과를 찾을 수 없습니다.
+2025-04-04 21:05:25,983 - WARNING - XAI 검증 결과를 찾을 수 없습니다.
+2025-04-04 21:05:25,983 - WARNING - 온톨로지 검증 결과를 찾을 수 없습니다.
+2025-04-04 21:05:26,181 - INFO - 검증 상태 요약 그래프가 저장되었습니다: /Users/raziel/Desktop/XAI/output/validation_summary/validation_status_summary.png
+2025-04-04 21:05:26,182 - INFO - 검증 보고서가 생성되었습니다: /Users/raziel/Desktop/XAI/output/validation_summary/validation_report.html
+2025-04-04 21:05:26,182 - INFO - 모든 검증 작업이 완료되었습니다.
+2025-04-04 21:12:28,833 - INFO - 데이터 전처리 검증 실행 시작...
+2025-04-04 21:12:30,478 - ERROR - 데이터 전처리 검증 실행 중 오류 발생:
+2025-04-04 21:12:30,478 - ERROR - 오류 메시지: 2025-04-04 21:12:30,352 - INFO - 원본 데이터 크기: (7536, 57)
+2025-04-04 21:12:30,352 - INFO - 컬럼 수: 57
+2025-04-04 21:12:30,355 - INFO - 수치형 컬럼 수: 0
+2025-04-04 21:12:30,355 - INFO - 범주형 컬럼 수: 57
+2025-04-04 21:12:30,377 - INFO - 전체 결측치 수: 540
+2025-04-04 21:12:30,379 - INFO - 이상치 제거 후 데이터 크기: (7536, 57)
+2025-04-04 21:12:30,381 - INFO - 불량 비율: 0.01%
+/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/base.py:474: FutureWarning: `BaseEstimator._validate_data` is deprecated in 1.6 and will be removed in 1.7. Use `sklearn.utils.validation.validate_data` instead. This function becomes public and is part of the scikit-learn developer API.
+  warnings.warn(
+2025-04-04 21:12:30,389 - ERROR - SMOTE 적용 중 오류 발생: at least one array or dtype is required
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_data_preprocessing.py", line 162, in <module>
+    results = validate_dataset_preprocessing()
+  File "/Users/raziel/Desktop/XAI/validate_data_preprocessing.py", line 110, in validate_dataset_preprocessing
+    X_train, X_test, y_train, y_test = train_test_split(
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/_param_validation.py", line 216, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2872, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 1909, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2318, in _iter_indices
+    raise ValueError(
+ValueError: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+
+2025-04-04 21:12:30,478 - INFO - 모델 성능 검증 실행 시작...
+2025-04-04 21:12:31,831 - ERROR - 모델 성능 검증 실행 중 오류 발생:
+2025-04-04 21:12:31,831 - ERROR - 오류 메시지: 2025-04-04 21:12:31,730 - INFO - 원본 데이터 크기: (7536, 57)
+2025-04-04 21:12:31,732 - INFO - 이상치 제거 후 데이터 크기: (7536, 57)
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_model_performance.py", line 289, in <module>
+    results, comparison, best_model = train_and_evaluate_models()
+  File "/Users/raziel/Desktop/XAI/validate_model_performance.py", line 114, in train_and_evaluate_models
+    X_train, X_test, y_train, y_test, feature_names = preprocess_data()
+  File "/Users/raziel/Desktop/XAI/validate_model_performance.py", line 79, in preprocess_data
+    X_scaled = scaler.fit_transform(X_numeric)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/_set_output.py", line 319, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/base.py", line 918, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 894, in fit
+    return self.partial_fit(X, y, sample_weight)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 930, in partial_fit
+    X = validate_data(
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2944, in validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/sklearn/utils/validation.py", line 931, in check_array
+    dtype_orig = np.result_type(*dtypes_orig)
+  File "<__array_function__ internals>", line 180, in result_type
+ValueError: at least one array or dtype is required
+
+2025-04-04 21:12:31,832 - INFO - XAI 분석 검증 실행 시작...
+2025-04-04 21:12:33,534 - ERROR - XAI 분석 검증 실행 중 오류 발생:
+2025-04-04 21:12:33,534 - ERROR - 오류 메시지: Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_xai_analysis.py", line 9, in <module>
+    from dice_ml import DiCE
+ImportError: cannot import name 'DiCE' from 'dice_ml' (/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/dice_ml/__init__.py)
+
+2025-04-04 21:12:33,535 - INFO - 온톨로지 추론 검증 실행 시작...
+2025-04-04 21:12:34,124 - ERROR - 온톨로지 추론 검증 실행 중 오류 발생:
+2025-04-04 21:12:34,125 - ERROR - 오류 메시지: 2025-04-04 21:12:34,055 - INFO - 온톨로지 로드 시작: /Users/raziel/Desktop/XAI/ontology/diecasting_ontology.owl
+2025-04-04 21:12:34,055 - INFO - 기존 온톨로지 파일 백업 완료: /Users/raziel/Desktop/XAI/ontology/backup_diecasting_ontology.owl
+2025-04-04 21:12:34,058 - INFO - 온톨로지 로드 완료: 클래스 29개, 인스턴스 17개, 프로퍼티 11개
+2025-04-04 21:12:34,058 - INFO - 온톨로지 구조 검증 시작
+2025-04-04 21:12:34,058 - WARNING - 누락된 필수 클래스: Process, Product, Material
+2025-04-04 21:12:34,058 - WARNING - 누락된 필수 프로퍼티: hasProcessParameter, hasCause, hasDefect
+2025-04-04 21:12:34,058 - ERROR - 온톨로지 구조 검증 중 오류 발생: 'method' object is not iterable
+2025-04-04 21:12:34,058 - INFO - SWRL 규칙 검증 시작
+2025-04-04 21:12:34,058 - ERROR - SWRL 규칙 검증 중 오류 발생: 'method' object is not iterable
+2025-04-04 21:12:34,058 - INFO - 온톨로지 추론 시작
+* Owlready2 * Running Pellet...
+    java -Xmx2000M -cp /opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/httpclient-4.2.3.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/aterm-java-1.6.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/xercesImpl-2.10.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/slf4j-api-1.6.4.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-tdb-0.10.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-iri-0.9.5.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/owlapi-distribution-3.4.3-bin.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jcl-over-slf4j-1.6.4.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/slf4j-log4j12-1.6.4.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/antlr-runtime-3.2.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/log4j-core-2.19.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/pellet-2.3.1.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jgrapht-jdk1.5.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/commons-codec-1.6.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/antlr-3.2.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/xml-apis-1.4.01.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/log4j-1.2-api-2.19.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/httpcore-4.2.2.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-arq-2.10.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/log4j-api-2.19.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-core-2.10.0.jar pellet.Pellet realize --loader Jena --input-format N-Triples --infer-prop-values --infer-data-prop-values --ignore-imports /var/folders/gp/z63786vj1bl9byrtnmsjsh800000gn/T/tmp5oug__tp
+2025-04-04 21:12:34,071 - ERROR - Pellet 추론기 실행 실패: Java error message is:
+The operation couldn’t be completed. Unable to locate a Java Runtime.
+Please visit http://www.java.com for information on installing Java.
+
+
+2025-04-04 21:12:34,071 - ERROR - HermiT 추론기 실행 실패: sync_reasoner_hermit() got an unexpected keyword argument 'infer_data_property_values'
+2025-04-04 21:12:34,071 - INFO - 온톨로지 추론 결과와 XAI 분석 결과 비교 시작
+2025-04-04 21:12:34,071 - WARNING - XAI 결과 파일이 없습니다. 샘플 결과를 생성합니다.
+2025-04-04 21:12:34,071 - ERROR - 온톨로지 추론 결과 파일이 없습니다.
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_ontology_inference.py", line 467, in <module>
+    comparison_success, agreement_ratio = compare_with_xai_results(onto, xai_results_path)
+TypeError: cannot unpack non-iterable bool object
+
+2025-04-04 21:12:34,125 - WARNING - 데이터 검증 결과를 찾을 수 없습니다.
+2025-04-04 21:12:34,125 - WARNING - 모델 검증 결과를 찾을 수 없습니다.
+2025-04-04 21:12:34,125 - WARNING - XAI 검증 결과를 찾을 수 없습니다.
+2025-04-04 21:12:34,125 - WARNING - 온톨로지 검증 결과를 찾을 수 없습니다.
+2025-04-04 21:12:34,295 - INFO - 검증 상태 요약 그래프가 저장되었습니다: /Users/raziel/Desktop/XAI/output/validation_summary/validation_status_summary.png
+2025-04-04 21:12:34,296 - INFO - 검증 보고서가 생성되었습니다: /Users/raziel/Desktop/XAI/output/validation_summary/validation_report.html
+2025-04-04 21:12:34,296 - INFO - 모든 검증 작업이 완료되었습니다.

@@ -1,0 +1,31 @@
+실행 결과: 실패
+
+표준 출력:
+
+
+표준 오류:
+2025-04-04 21:12:34,055 - INFO - 온톨로지 로드 시작: /Users/raziel/Desktop/XAI/ontology/diecasting_ontology.owl
+2025-04-04 21:12:34,055 - INFO - 기존 온톨로지 파일 백업 완료: /Users/raziel/Desktop/XAI/ontology/backup_diecasting_ontology.owl
+2025-04-04 21:12:34,058 - INFO - 온톨로지 로드 완료: 클래스 29개, 인스턴스 17개, 프로퍼티 11개
+2025-04-04 21:12:34,058 - INFO - 온톨로지 구조 검증 시작
+2025-04-04 21:12:34,058 - WARNING - 누락된 필수 클래스: Process, Product, Material
+2025-04-04 21:12:34,058 - WARNING - 누락된 필수 프로퍼티: hasProcessParameter, hasCause, hasDefect
+2025-04-04 21:12:34,058 - ERROR - 온톨로지 구조 검증 중 오류 발생: 'method' object is not iterable
+2025-04-04 21:12:34,058 - INFO - SWRL 규칙 검증 시작
+2025-04-04 21:12:34,058 - ERROR - SWRL 규칙 검증 중 오류 발생: 'method' object is not iterable
+2025-04-04 21:12:34,058 - INFO - 온톨로지 추론 시작
+* Owlready2 * Running Pellet...
+    java -Xmx2000M -cp /opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/httpclient-4.2.3.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/aterm-java-1.6.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/xercesImpl-2.10.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/slf4j-api-1.6.4.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-tdb-0.10.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-iri-0.9.5.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/owlapi-distribution-3.4.3-bin.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jcl-over-slf4j-1.6.4.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/slf4j-log4j12-1.6.4.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/antlr-runtime-3.2.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/log4j-core-2.19.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/pellet-2.3.1.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jgrapht-jdk1.5.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/commons-codec-1.6.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/antlr-3.2.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/xml-apis-1.4.01.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/log4j-1.2-api-2.19.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/httpcore-4.2.2.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-arq-2.10.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/log4j-api-2.19.0.jar:/opt/miniconda3/envs/XAI/lib/python3.9/site-packages/owlready2/pellet/jena-core-2.10.0.jar pellet.Pellet realize --loader Jena --input-format N-Triples --infer-prop-values --infer-data-prop-values --ignore-imports /var/folders/gp/z63786vj1bl9byrtnmsjsh800000gn/T/tmp5oug__tp
+2025-04-04 21:12:34,071 - ERROR - Pellet 추론기 실행 실패: Java error message is:
+The operation couldn’t be completed. Unable to locate a Java Runtime.
+Please visit http://www.java.com for information on installing Java.
+
+
+2025-04-04 21:12:34,071 - ERROR - HermiT 추론기 실행 실패: sync_reasoner_hermit() got an unexpected keyword argument 'infer_data_property_values'
+2025-04-04 21:12:34,071 - INFO - 온톨로지 추론 결과와 XAI 분석 결과 비교 시작
+2025-04-04 21:12:34,071 - WARNING - XAI 결과 파일이 없습니다. 샘플 결과를 생성합니다.
+2025-04-04 21:12:34,071 - ERROR - 온톨로지 추론 결과 파일이 없습니다.
+Traceback (most recent call last):
+  File "/Users/raziel/Desktop/XAI/validate_ontology_inference.py", line 467, in <module>
+    comparison_success, agreement_ratio = compare_with_xai_results(onto, xai_results_path)
+TypeError: cannot unpack non-iterable bool object

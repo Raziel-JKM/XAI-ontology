@@ -1,0 +1,33 @@
+온톨로지 추론 결과와 XAI 분석 결과 비교 보고서
+=========================================
+
+특성 'Sensor_Factory_Humidity'는 온톨로지에 존재하며, SHAP 값은 0.0212입니다.
+특성 'Process_Spray_Time'는 온톨로지에 존재하며, SHAP 값은 0.0206입니다.
+특성 'Process_Clamping_Force'는 온톨로지에 존재하며, SHAP 값은 0.0200입니다.
+특성 'Process_Cycle_Time'는 온톨로지에 존재하며, SHAP 값은 0.0196입니다.
+특성 'Process_High_Velocity'는 온톨로지에 존재하며, SHAP 값은 0.0193입니다.
+특성 'Process_Shot'는 온톨로지에 존재하며, SHAP 값은 0.0180입니다.
+특성 'Sensor_Melting_Furnace_Temp'는 온톨로지에 존재하며, SHAP 값은 0.0177입니다.
+특성 'Process_Spray_1_Time'는 온톨로지에 존재하며, SHAP 값은 0.0168입니다.
+특성 'Sensor_Coolant_Pressure'는 온톨로지에 존재하며, SHAP 값은 0.0146입니다.
+특성 'Sensor_Coolant_Temp'는 온톨로지에 존재하며, SHAP 값은 0.0138입니다.
+특성 'Process_Casting_Pressure'는 온톨로지에 존재하며, SHAP 값은 0.0129입니다.
+특성 'Sensor_Air_Pressure'는 온톨로지에 존재하며, SHAP 값은 0.0129입니다.
+특성 'Sensor_Factory_Temp'는 온톨로지에 존재하며, SHAP 값은 0.0126입니다.
+특성 'Process_Spray_2_Time'는 온톨로지에 존재하며, SHAP 값은 0.0110입니다.
+특성 'Process_Velocity_3'는 온톨로지에 존재하며, SHAP 값은 0.0098입니다.
+특성 'Process_Biscuit_Thickness'는 온톨로지에 존재하며, SHAP 값은 0.0097입니다.
+특성 'Process_Velocity_2'는 온톨로지에 존재하며, SHAP 값은 0.0091입니다.
+특성 'Process_ Pressure_Rise_Time'는 온톨로지에 존재하며, SHAP 값은 0.0086입니다.
+특성 'Process_Velocity_1'는 온톨로지에 존재하며, SHAP 값은 0.0085입니다.
+특성 'Process_Cylinder_Pressure'는 온톨로지에 존재하며, SHAP 값은 0.0076입니다.
+특성 'Process_Rapid_Rise_Time'는 온톨로지에 존재하며, SHAP 값은 0.0055입니다.
+특성 'Process_Product_Type_2'는 온톨로지에 존재하며, SHAP 값은 0.0029입니다.
+특성 'Sensor_Coolant_Temp_Max'는 온톨로지에 존재하며, SHAP 값은 0.0000입니다.
+특성 'Sensor_Coolant_Temp_Min'는 온톨로지에 존재하며, SHAP 값은 0.0000입니다.
+특성 'Sensor_Factory_Temp_Min'는 온톨로지에 존재하며, SHAP 값은 0.0000입니다.
+특성 'Sensor_Factory_Temp_Max'는 온톨로지에 존재하며, SHAP 값은 0.0000입니다.
+특성 'Sensor_Air_Pressure_Min'는 온톨로지에 존재하며, SHAP 값은 0.0000입니다.
+특성 'Sensor_Factory_Humidity_Min'는 온톨로지에 존재하며, SHAP 값은 0.0000입니다.
+특성 'Sensor_Factory_Humidity_Max'는 온톨로지에 존재하며, SHAP 값은 0.0000입니다.
+특성 'Sensor_Air_Pressure_Max'는 온톨로지에 존재하며, SHAP 값은 0.0000입니다.

@@ -1,0 +1,25 @@
+온톨로지 검증 보고서
+===================
+
+1. 온톨로지 요약
+   - 클래스 수: 29
+   - 인스턴스 수: 47
+   - 속성 수: 11
+
+2. XAI 결과와의 통합
+   - XAI에서 식별된 중요 특성 수: 30
+   - 온톨로지에 통합된 특성 수: 30
+   - 통합된 특성 (온톨로지 이름 기준): Process_ Pressure_Rise_Time, Process_Biscuit_Thickness, Process_Casting_Pressure, Process_Clamping_Force, Process_Cycle_Time, Process_Cylinder_Pressure, Process_High_Velocity, Process_Product_Type_2, Process_Rapid_Rise_Time, Process_Shot, Process_Spray_1_Time, Process_Spray_2_Time, Process_Spray_Time, Process_Velocity_1, Process_Velocity_2, Process_Velocity_3, Sensor_Air_Pressure, Sensor_Air_Pressure_Max, Sensor_Air_Pressure_Min, Sensor_Coolant_Pressure, Sensor_Coolant_Temp, Sensor_Coolant_Temp_Max, Sensor_Coolant_Temp_Min, Sensor_Factory_Humidity, Sensor_Factory_Humidity_Max, Sensor_Factory_Humidity_Min, Sensor_Factory_Temp, Sensor_Factory_Temp_Max, Sensor_Factory_Temp_Min, Sensor_Melting_Furnace_Temp
+
+3. 불량 유형 및 원인 분석
+   - ShortShotDefect:
+     * 원인: Velocity_2, Velocity_1, Sensor_Factory_Humidity, Process_Spray_Time, Process_Clamping_Force, Process_Cycle_Time, Process_High_Velocity, Process_Shot, Sensor_Melting_Furnace_Temp, Process_Spray_1_Time, Sensor_Coolant_Pressure, Sensor_Coolant_Temp, Process_Casting_Pressure, Sensor_Air_Pressure, Sensor_Factory_Temp, Process_Spray_2_Time, Process_Velocity_3, Process_Biscuit_Thickness, Process_Velocity_2, Process_ Pressure_Rise_Time, Process_Velocity_1, Process_Cylinder_Pressure, Process_Rapid_Rise_Time, Process_Product_Type_2
+     * 방지 매개변수: High_Velocity
+   - BubbleDefect:
+     * 원인: Melting_Furnace_Temp
+     * 방지 매개변수: Casting_Pressure
+   - BlowHoleDefect:
+     * 원인: Pressure_Rise_Time, Melting_Furnace_Temp
+     * 방지 매개변수: 명시된 방지책 없음
+
+4. 결론 및 권장사항

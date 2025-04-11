@@ -1,0 +1,27 @@
+XAI와 온톨로지 통합 보고서
+==========================
+
+1. 프로젝트 요약
+   - 데이터셋: /Users/raziel/Desktop/XAI/Dataset/data/DieCasting_Quality_Raw_Data.csv
+   - 레코드 수: 7284
+   - 변수 수: 31
+   - 타겟 변수: AnyDefect
+
+2. 모델 성능
+   - 사용된 알고리즘: RandomForestClassifier
+   - 모델 파라미터: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+
+3. XAI 결과
+   - 주요 특성:
+     * Sensor_Factory_Humidity: 0.021225
+     * Process_Spray_Time: 0.020553
+     * Process_Clamping_Force: 0.020018
+     * Process_Cycle_Time: 0.019590
+     * Process_High_Velocity: 0.019328
+
+4. 온톨로지 통합
+   - 온톨로지 파일: /Users/raziel/Desktop/XAI/ontology/diecasting_ontology_updated.owl
+
+5. 후속 조치 및 권장사항
+   - 주요 특성과 불량 간의 관계를 심층 분석하여 불량 예방책 수립
+   - 온톨로지를 활용한 지식 기반 의사결정 지원 시스템 구축
