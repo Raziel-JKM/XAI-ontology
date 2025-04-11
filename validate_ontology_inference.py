@@ -137,7 +137,7 @@ def validate_swrl_rules(onto):
         existing_rules = list(onto.rules)
         logging.info(f"기존 SWRL 규칙 수: {len(existing_rules)}")
         
-        # 논문에서 언급된 SWRL 규칙 예시
+        #  언급된 SWRL 규칙 예시
         sample_rules = [
             # Process.1 파라미터가 임계값 이상일 때 ShortShotDefect 불량 발생 규칙
             """Process(?p), ProcessParameter(?param), hasProcessParameter(?p, ?param), 
