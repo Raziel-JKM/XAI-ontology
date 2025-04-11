@@ -19,7 +19,7 @@ os.makedirs(output_dir, exist_ok=True)
 
 def validate_dataset_preprocessing():
     """
-    논문 4.1 섹션에서 언급된 데이터 전처리 과정을 검증합니다.
+    실험 4.1 섹션에서 언급된 데이터 전처리 과정을 검증합니다.
     - 원본 데이터 크기와 구조 확인 (7,536개)
     - 전처리 후 데이터 크기 확인 (5,618개)
     - 불량 사례 비율 확인 (약 5% -> 10%)
@@ -162,8 +162,8 @@ if __name__ == "__main__":
     results = validate_dataset_preprocessing()
     logging.info(f"검증 결과: {results}")
     
-    # 논문과 일치하는지 검증
-    expected_original_size = (7536, 57)  # 논문에서 언급된 원본 데이터 크기
+    # 실험과 일치하는지 검증
+    expected_original_size = (7536, 57)  #  언급된 원본 데이터 크기
     expected_preprocessed_size = (5618, 57)  # 이상치 제거 후 크기
     expected_defect_ratio = 0.05  # 원본 불량 비율
     expected_defect_ratio_after = 0.10  # SMOTE 적용 후 불량 비율
